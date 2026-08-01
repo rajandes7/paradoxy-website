@@ -1,0 +1,128 @@
+---
+import { HOME_SECTIONS, BLOG_LINK, SOCIALS } from "@/constants";
+import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
+import IconMenu from "@/assets/icons/IconMenu.svg";
+import IconClose from "@/assets/icons/IconClose.svg";
+import ThemeToggle from "./ThemeToggle.astro";
+
+const { pathname } = Astro.url;
+const isBlog = pathname.startsWith("/blog");
+const linkedin = SOCIALS.find(s => s.name === "LinkedIn")!;
+---
+
+<a
+  id="skip-to-content"
+  href="#main-content"
+  class="absolute start-4 -top-full z-50 bg-background px-3 py-2 text-accent focus:top-4"
+>
+  Skip to content
+</a>
+
+<header
+  class="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-md"
+>
+  <div class="app-layout flex items-center justify-between py-3">
+    <a href="/" class="flex shrink-0 items-center" aria-label="ParadOxy Particles home">
+      <img
+        src="/brand/ParadOxyParticles_Logo_With_Company_Name_No_Molecule.svg"
+        alt="ParadOxy Particles"
+        class="h-9 w-auto sm:h-10"
+      />
+    </a>
+
+    <nav aria-label="Primary" class="flex items-center">
+      <button
+        id="menu-btn"
+        class="p-2 sm:hidden"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="menu-items"
+      >
+        <IconMenu id="menu-icon" class="size-6" />
+        <IconClose id="close-icon" class="hidden size-6" />
+      </button>
+
+      <ul
+        id="menu-items"
+        class:list={[
+          "hidden",
+          "absolute inset-x-0 top-full flex-col gap-1 border-b border-border bg-background p-4",
+          "sm:static sm:flex sm:flex-row sm:items-center sm:gap-6 sm:border-none sm:bg-transparent sm:p-0",
+        ]}
+      >
+        {
+          HOME_SECTIONS.map(section => (
+            <li>
+              <a
+                href={`/#${section.id}`}
+                class="block px-2 py-2 font-medium transition-colors hover:text-accent sm:px-0 sm:py-0"
+              >
+                {section.name}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a
+            href={BLOG_LINK.href}
+            class:list={[
+              "block px-2 py-2 font-medium transition-colors hover:text-accent sm:px-0 sm:py-0",
+              { "text-accent": isBlog },
+            ]}
+          >
+            {BLOG_LINK.name}
+          </a>
+        </li>
+        <li>
+          <a
+            href={linkedin.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={linkedin.linkTitle}
+            class="flex items-center gap-2 px-2 py-2 transition-colors hover:text-accent sm:px-0 sm:py-0"
+          >
+            <IconLinkedin class="size-5" />
+            <span class="sm:hidden">LinkedIn</span>
+          </a>
+        </li>
+        <li class="pt-2 sm:pt-0">
+          <ThemeToggle />
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function initMenuToggle() {
+    const menuBtn = document.querySelector("#menu-btn");
+    const menuItems = document.querySelector("#menu-items");
+    const menuIcon = document.querySelector("#menu-icon");
+    const closeIcon = document.querySelector("#close-icon");
+    if (!menuBtn || !menuItems || !menuIcon || !closeIcon) return;
+
+    menuBtn.addEventListener("click", () => {
+      const open = menuBtn.getAttribute("aria-expanded") === "true";
+      menuBtn.setAttribute("aria-expanded", open ? "false" : "true");
+      menuBtn.setAttribute("aria-label", open ? "Open menu" : "Close menu");
+      menuItems.classList.toggle("hidden");
+      menuItems.classList.toggle("flex");
+      menuIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    });
+
+    menuItems.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (menuBtn.getAttribute("aria-expanded") !== "true") return;
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Open menu");
+        menuItems.classList.add("hidden");
+        menuItems.classList.remove("flex");
+        menuIcon.classList.remove("hidden");
+        closeIcon.classList.add("hidden");
+      });
+    });
+  }
+
+  initMenuToggle();
+</script>

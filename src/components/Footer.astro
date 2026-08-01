@@ -1,0 +1,36 @@
+---
+import { SOCIALS, CONTACT_EMAIL } from "@/constants";
+import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
+
+const currentYear = new Date().getFullYear();
+const linkedin = SOCIALS.find(s => s.name === "LinkedIn")!;
+---
+
+<footer class="mt-auto border-t border-border">
+  <div class="app-layout flex flex-col items-center gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
+    <a href="/" class="flex items-center" aria-label="ParadOxy Particles home">
+      <img
+        src="/brand/ParadOxyParticles_Logo_With_Company_Name.svg"
+        alt="ParadOxy Particles"
+        class="h-16 w-auto opacity-90"
+      />
+    </a>
+
+    <div class="flex flex-col items-center gap-2 text-sm text-foreground/70 sm:items-end">
+      <a
+        href={linkedin.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={linkedin.linkTitle}
+        class="flex items-center gap-2 transition-colors hover:text-accent"
+      >
+        <IconLinkedin class="size-4" />
+        LinkedIn
+      </a>
+      <a href={`mailto:${CONTACT_EMAIL}`} class="transition-colors hover:text-accent">
+        {CONTACT_EMAIL}
+      </a>
+      <span>Copyright &#169; {currentYear} ParadOxy Particles. All rights reserved.</span>
+    </div>
+  </div>
+</footer>

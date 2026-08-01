@@ -1,0 +1,20 @@
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  .prose {
+    --tw-prose-body: var(--color-foreground);
+    --tw-prose-headings: var(--color-foreground);
+    --tw-prose-links: var(--color-accent-blue);
+    --tw-prose-bold: var(--color-foreground);
+    --tw-prose-bullets: var(--color-accent);
+    --tw-prose-quotes: var(--color-foreground);
+    --tw-prose-quote-borders: var(--color-accent);
+    --tw-prose-hr: var(--color-border);
+  }
+  .prose a {
+    @apply text-accent-blue underline decoration-accent-blue/40 underline-offset-2 transition-colors hover:text-accent hover:decoration-accent;
+  }
+  .prose blockquote {
+    @apply border-l-accent font-medium not-italic;
+  }
+}

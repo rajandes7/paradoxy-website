@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Hero from "@/components/Hero.astro";
+import WhatWeDo from "@/components/WhatWeDo.astro";
+import Team from "@/components/Team.astro";
+import Contact from "@/components/Contact.astro";
+---
+
+<BaseLayout>
+  <Hero />
+  <WhatWeDo />
+  <Team />
+  <Contact />
+</BaseLayout>
+
+<script>
+  // When arriving from another page with a section hash (e.g. /blog ->
+  // /#contact), do a smooth scroll into place instead of the browser's
+  // default instant jump, so the nav feels consistent whether you're
+  // already on "/" or navigating back to it.
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    target?.scrollIntoView({ behavior: "smooth" });
+  }
+</script>

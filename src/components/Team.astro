@@ -1,0 +1,29 @@
+---
+import { TEAM } from "@/constants";
+---
+
+<section id="team" class="border-t border-border bg-muted/40 py-20 sm:py-28">
+  <div class="app-layout">
+    <h2 class="text-sm font-semibold tracking-widest text-accent uppercase">Team</h2>
+    <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12">
+      {
+        TEAM.map(member => (
+          <div class="flex items-center gap-6">
+            <img
+              src={member.image}
+              alt={member.name}
+              class="size-28 shrink-0 rounded-full border border-border object-cover sm:size-32"
+            />
+            <div>
+              <h3 class="text-xl font-semibold">{member.name}</h3>
+              <p class="text-foreground/70">{member.title}</p>
+              <span class="mt-2 inline-block rounded-full border border-accent/40 px-3 py-1 text-xs font-medium text-accent">
+                {member.role}
+              </span>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
