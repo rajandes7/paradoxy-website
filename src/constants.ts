@@ -26,11 +26,13 @@ export const TEAM = [
     title: "CEO & Co-Founder",
     role: "Data Scientist",
     image: "/team/rajan-desai.jpg",
+    linkedin: "https://www.linkedin.com/in/rajandes7/",
   },
   {
     name: "Kyle O'Malley",
     title: "CTO & Co-Founder",
     role: "Chemical Engineer",
     image: "/team/kyle-omalley.jpg",
+    linkedin: "https://www.linkedin.com/in/kyle-o-malley-5175967a/",
   },
 ] as const;

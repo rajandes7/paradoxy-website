@@ -16,7 +16,7 @@ const linkedin = SOCIALS.find(s => s.name === "LinkedIn")!;
       />
     </a>
 
-    <div class="flex flex-col items-center gap-2 text-sm text-foreground/70 sm:items-end">
+    <div class="flex flex-col items-center gap-2 text-base text-foreground/70 sm:items-end">
       <a
         href={linkedin.href}
         target="_blank"
@@ -24,7 +24,7 @@ const linkedin = SOCIALS.find(s => s.name === "LinkedIn")!;
         title={linkedin.linkTitle}
         class="flex items-center gap-2 transition-colors hover:text-accent"
       >
-        <IconLinkedin class="size-4" />
+        <IconLinkedin class="size-5" />
         LinkedIn
       </a>
       <a href={`mailto:${CONTACT_EMAIL}`} class="transition-colors hover:text-accent">
