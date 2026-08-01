@@ -19,18 +19,18 @@ export const SOCIALS = [
   },
 ] as const;
 
-// TODO: swap these placeholder avatars for real headshots (see summary).
+// Headshots live in public/team/ — see README for the exact filenames.
 export const TEAM = [
   {
     name: "Rajan Desai",
     title: "CEO & Co-Founder",
     role: "Data Scientist",
-    image: "/team/rajan-desai.svg",
+    image: "/team/rajan-desai.jpg",
   },
   {
     name: "Kyle O'Malley",
     title: "CTO & Co-Founder",
     role: "Chemical Engineer",
-    image: "/team/kyle-omalley.svg",
+    image: "/team/kyle-omalley.jpg",
   },
 ] as const;
