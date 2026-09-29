@@ -2,34 +2,67 @@
   <defs>
     <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#000000"/>
-      <stop offset="100%" stop-color="#0a1f16"/>
+      <stop offset="100%" stop-color="#071a12"/>
     </linearGradient>
-    <linearGradient id="particle1" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="carrier1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#229264"/>
       <stop offset="100%" stop-color="#0808DD"/>
     </linearGradient>
+    <linearGradient id="carrier1r" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0808DD"/>
+      <stop offset="100%" stop-color="#229264"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#229264" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#229264" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0808DD" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0808DD" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8fe0bc"/>
+    </marker>
   </defs>
+
   <rect width="1200" height="630" fill="url(#bg1)"/>
-  <g stroke="url(#particle1)" stroke-width="2" opacity="0.6" fill="none">
-    <line x1="180" y1="140" x2="340" y2="220"/>
-    <line x1="340" y1="220" x2="300" y2="380"/>
-    <line x1="300" y1="380" x2="480" y2="440"/>
-    <line x1="480" y1="440" x2="620" y2="300"/>
-    <line x1="620" y1="300" x2="820" y2="360"/>
-    <line x1="820" y1="360" x2="960" y2="200"/>
-    <line x1="960" y1="200" x2="1080" y2="320"/>
-    <line x1="620" y1="300" x2="700" y2="140"/>
+  <circle cx="330" cy="290" r="220" fill="url(#glow1)"/>
+  <circle cx="870" cy="290" r="220" fill="url(#glow2)"/>
+
+  <!-- Fuel Reactor -->
+  <rect x="150" y="200" width="260" height="220" rx="18" fill="none" stroke="#229264" stroke-width="3"/>
+  <text x="280" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#eafff4">Fuel Reactor</text>
+  <text x="280" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" fill="#8fe0bc">CO&#8322; + H&#8322;O</text>
+
+  <!-- Air Reactor -->
+  <rect x="790" y="200" width="260" height="220" rx="18" fill="none" stroke="#0808DD" stroke-width="3"/>
+  <text x="920" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#eaf0ff">Air Reactor</text>
+  <text x="920" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" fill="#9aa8ff">N&#8322; Out</text>
+
+  <!-- Fuel in / flue gas out arrows -->
+  <line x1="60" y1="230" x2="150" y2="230" stroke="#8fe0bc" stroke-width="3" marker-end="url(#arrow1)"/>
+  <text x="55" y="215" text-anchor="start" font-family="Arial, sans-serif" font-size="20" fill="#8fe0bc">Fuel In</text>
+  <line x1="150" y1="390" x2="60" y2="390" stroke="#8fe0bc" stroke-width="3" marker-end="url(#arrow1)"/>
+
+  <!-- Air in / N2 out arrows -->
+  <line x1="1140" y1="230" x2="1050" y2="230" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow1)"/>
+  <text x="1145" y="215" text-anchor="end" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">Air In</text>
+  <line x1="1050" y1="390" x2="1140" y2="390" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow1)"/>
+
+  <!-- Oxygen carrier loop between reactors -->
+  <path d="M 410 250 C 520 190, 680 190, 790 250" fill="none" stroke="url(#carrier1)" stroke-width="4" marker-end="url(#arrow1)"/>
+  <path d="M 790 370 C 680 430, 520 430, 410 370" fill="none" stroke="url(#carrier1r)" stroke-width="4" marker-end="url(#arrow1)"/>
+  <text x="600" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#c9c9c9">MeO carries O&#8322;</text>
+  <text x="600" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#c9c9c9">Me returns for re-oxidation</text>
+
+  <g fill="#e6e6e6">
+    <circle cx="480" cy="215" r="5"/>
+    <circle cx="600" cy="197" r="5"/>
+    <circle cx="720" cy="215" r="5"/>
+    <circle cx="480" cy="405" r="5"/>
+    <circle cx="600" cy="423" r="5"/>
+    <circle cx="720" cy="405" r="5"/>
   </g>
-  <g fill="url(#particle1)" opacity="0.9">
-    <circle cx="180" cy="140" r="6"/>
-    <circle cx="340" cy="220" r="9"/>
-    <circle cx="300" cy="380" r="5"/>
-    <circle cx="480" cy="440" r="7"/>
-    <circle cx="620" cy="300" r="10"/>
-    <circle cx="700" cy="140" r="5"/>
-    <circle cx="820" cy="360" r="6"/>
-    <circle cx="960" cy="200" r="8"/>
-    <circle cx="1080" cy="320" r="5"/>
-  </g>
-  <text x="600" y="580" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="22" fill="#eaeaea" opacity="0.55">ParadOxy Particles &#8212; Technology</text>
+
+  <text x="600" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#9a9a9a">Chemical Looping Combustion &#8212; ParadOxy Particles</text>
 </svg>

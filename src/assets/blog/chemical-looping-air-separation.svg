@@ -4,30 +4,64 @@
       <stop offset="0%" stop-color="#000000"/>
       <stop offset="100%" stop-color="#050a24"/>
     </linearGradient>
-    <linearGradient id="particle2" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="carrier2" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0808DD"/>
       <stop offset="100%" stop-color="#229264"/>
     </linearGradient>
+    <linearGradient id="carrier2r" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#229264"/>
+      <stop offset="100%" stop-color="#0808DD"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0808DD" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0808DD" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#229264" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#229264" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a8e6ca"/>
+    </marker>
   </defs>
+
   <rect width="1200" height="630" fill="url(#bg2)"/>
-  <g stroke="url(#particle2)" stroke-width="2" opacity="0.6" fill="none">
-    <circle cx="420" cy="300" r="120"/>
-    <circle cx="780" cy="300" r="120"/>
-    <line x1="540" y1="300" x2="660" y2="300"/>
-    <line x1="420" y1="180" x2="420" y2="420"/>
-    <line x1="780" y1="180" x2="780" y2="420"/>
+  <circle cx="330" cy="290" r="220" fill="url(#glow3)"/>
+  <circle cx="870" cy="290" r="220" fill="url(#glow4)"/>
+
+  <!-- Air Reactor -->
+  <rect x="150" y="200" width="260" height="220" rx="18" fill="none" stroke="#0808DD" stroke-width="3"/>
+  <text x="280" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#eaf0ff">Air Reactor</text>
+  <text x="280" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" fill="#9aa8ff">N&#8322;-Rich Out</text>
+
+  <!-- Oxygen Reactor -->
+  <rect x="790" y="200" width="260" height="220" rx="18" fill="none" stroke="#229264" stroke-width="3"/>
+  <text x="920" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#eafff4">Oxygen Reactor</text>
+  <text x="920" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" fill="#8fe0bc">O&#8322; Out</text>
+
+  <!-- Air in arrow -->
+  <line x1="60" y1="230" x2="150" y2="230" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="55" y="215" text-anchor="start" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">Air In</text>
+  <line x1="150" y1="390" x2="60" y2="390" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow2)"/>
+
+  <!-- High purity O2 out arrow -->
+  <line x1="1050" y1="390" x2="1140" y2="390" stroke="#8fe0bc" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="1145" y="415" text-anchor="end" font-family="Arial, sans-serif" font-size="20" fill="#8fe0bc">High-Purity O&#8322;</text>
+
+  <!-- Oxygen carrier loop between reactors (thermodynamic swing) -->
+  <path d="M 410 250 C 520 190, 680 190, 790 250" fill="none" stroke="url(#carrier2)" stroke-width="4" marker-end="url(#arrow2)"/>
+  <path d="M 790 370 C 680 430, 520 430, 410 370" fill="none" stroke="url(#carrier2r)" stroke-width="4" marker-end="url(#arrow2)"/>
+  <text x="600" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#c9c9c9">Oxygen binds to carrier</text>
+  <text x="600" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#c9c9c9">Thermodynamic swing releases O&#8322;</text>
+
+  <g fill="#e6e6e6">
+    <circle cx="480" cy="215" r="5"/>
+    <circle cx="600" cy="197" r="5"/>
+    <circle cx="720" cy="215" r="5"/>
+    <circle cx="480" cy="405" r="5"/>
+    <circle cx="600" cy="423" r="5"/>
+    <circle cx="720" cy="405" r="5"/>
   </g>
-  <g fill="url(#particle2)" opacity="0.9">
-    <circle cx="420" cy="300" r="10"/>
-    <circle cx="780" cy="300" r="10"/>
-    <circle cx="420" cy="180" r="6"/>
-    <circle cx="420" cy="420" r="6"/>
-    <circle cx="780" cy="180" r="6"/>
-    <circle cx="780" cy="420" r="6"/>
-    <circle cx="330" cy="220" r="5"/>
-    <circle cx="870" cy="220" r="5"/>
-    <circle cx="330" cy="380" r="5"/>
-    <circle cx="870" cy="380" r="5"/>
-  </g>
-  <text x="600" y="580" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="22" fill="#eaeaea" opacity="0.55">ParadOxy Particles &#8212; Technology</text>
+
+  <text x="600" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#9a9a9a">Chemical Looping Air Separation (CLAS) &#8212; ParadOxy Particles</text>
 </svg>
