@@ -31,18 +31,19 @@
 
   <!-- Air Reactor -->
   <rect x="150" y="200" width="260" height="220" rx="18" fill="none" stroke="#0808DD" stroke-width="3"/>
-  <text x="280" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#eaf0ff">Air Reactor</text>
-  <text x="280" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" fill="#9aa8ff">N&#8322;-Rich Out</text>
+  <text x="280" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#eaf0ff">Air Reactor</text>
 
   <!-- Oxygen Reactor -->
   <rect x="790" y="200" width="260" height="220" rx="18" fill="none" stroke="#229264" stroke-width="3"/>
-  <text x="920" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#eafff4">Oxygen Reactor</text>
-  <text x="920" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" fill="#8fe0bc">O&#8322; Out</text>
+  <text x="920" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#eafff4">Oxygen Reactor</text>
 
   <!-- Air in arrow -->
   <line x1="60" y1="230" x2="150" y2="230" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow2)"/>
   <text x="55" y="215" text-anchor="start" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">Air In</text>
+
+  <!-- N2-rich air out arrow (leaving Air Reactor) -->
   <line x1="150" y1="390" x2="60" y2="390" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="55" y="422" text-anchor="start" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">N&#8322;-Rich Air Out</text>
 
   <!-- High purity O2 out arrow -->
   <line x1="1050" y1="390" x2="1140" y2="390" stroke="#8fe0bc" stroke-width="3" marker-end="url(#arrow2)"/>
