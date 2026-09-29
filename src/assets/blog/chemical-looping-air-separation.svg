@@ -41,9 +41,9 @@
   <line x1="60" y1="230" x2="150" y2="230" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow2)"/>
   <text x="55" y="215" text-anchor="start" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">Air In</text>
 
-  <!-- N2-rich air out arrow (leaving Air Reactor) -->
+  <!-- O2-depleted air out arrow (leaving Air Reactor) -->
   <line x1="150" y1="390" x2="60" y2="390" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow2)"/>
-  <text x="55" y="422" text-anchor="start" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">N&#8322;-Rich Air Out</text>
+  <text x="55" y="422" text-anchor="start" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">O&#8322;-Depleted Air Out</text>
 
   <!-- High purity O2 out arrow -->
   <line x1="1050" y1="390" x2="1140" y2="390" stroke="#8fe0bc" stroke-width="3" marker-end="url(#arrow2)"/>
