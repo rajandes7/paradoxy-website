@@ -49,15 +49,17 @@
   <line x1="1140" y1="230" x2="1050" y2="230" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow1)"/>
   <text x="1145" y="215" text-anchor="end" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">Air In</text>
 
-  <!-- N2-depleted air out arrow (leaving Air Reactor) -->
+  <!-- O2-depleted air out arrow (leaving Air Reactor) -->
   <line x1="1050" y1="390" x2="1140" y2="390" stroke="#9aa8ff" stroke-width="3" marker-end="url(#arrow1)"/>
-  <text x="1145" y="422" text-anchor="end" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">N&#8322;-Depleted Air Out</text>
+  <text x="1145" y="422" text-anchor="end" font-family="Arial, sans-serif" font-size="20" fill="#9aa8ff">O&#8322;-Depleted Air Out</text>
 
   <!-- Oxygen carrier loop between reactors -->
+  <!-- Top arc: Fuel Reactor -> Air Reactor (reduced Me returning for re-oxidation) -->
   <path d="M 410 250 C 520 190, 680 190, 790 250" fill="none" stroke="url(#carrier1)" stroke-width="4" marker-end="url(#arrow1)"/>
+  <!-- Bottom arc: Air Reactor -> Fuel Reactor (oxidized MeO carrying O2 to the fuel) -->
   <path d="M 790 370 C 680 430, 520 430, 410 370" fill="none" stroke="url(#carrier1r)" stroke-width="4" marker-end="url(#arrow1)"/>
-  <text x="600" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#c9c9c9">MeO carries O&#8322;</text>
-  <text x="600" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#c9c9c9">Me returns for re-oxidation</text>
+  <text x="600" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#c9c9c9">Me returns for re-oxidation</text>
+  <text x="600" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#c9c9c9">MeO carries O&#8322;</text>
 
   <g fill="#e6e6e6">
     <circle cx="480" cy="215" r="5"/>
